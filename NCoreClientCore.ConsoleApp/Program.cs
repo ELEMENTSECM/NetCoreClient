@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NCoreClientCore.NetStandard;
 
 namespace NCoreClientCore.ConsoleApp
 {
@@ -28,12 +29,14 @@ namespace NCoreClientCore.ConsoleApp
                     configApp.AddJsonFile(
                         $"appsettings.{hostContext.HostingEnvironment.EnvironmentName}.json",
                         optional: true);
+                    configApp.AddJsonFile("appsettings.app01v66.elements-ecm.no.json", optional: true);
                     configApp.AddEnvironmentVariables(prefix: "PREFIX_");
                     configApp.AddCommandLine(args);
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddHostedService<LifetimeEventsHostedService>();
+                    services.Configure<NCoreOptions>(hostContext.Configuration.GetSection("NCore"));
+                    services.AddSingleton<NCoreFactory>();
                     services.AddHostedService<TimedHostedService>();
                 })
                 .ConfigureLogging((hostContext, configLogging) =>

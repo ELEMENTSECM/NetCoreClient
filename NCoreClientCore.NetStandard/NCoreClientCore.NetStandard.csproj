@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Gecko.NCore.Client" Version="10.0.1" />
+    <PackageReference Include="Gecko.NCore.Client.Documents.V2" Version="7.0.0" />
+    <PackageReference Include="Gecko.NCore.Client.Functions.V1" Version="6.3.0" />
+    <PackageReference Include="Gecko.NCore.Client.Functions.V2" Version="6.3.0" />
+    <PackageReference Include="Gecko.NCore.Client.ObjectModel.V3.En" Version="7.27.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+  </ItemGroup>
+
+</Project>
