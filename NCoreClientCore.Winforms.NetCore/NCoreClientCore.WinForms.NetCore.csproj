@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.app01v66.elements-ecm.no.json" />
+    <None Remove="appsettings.Development.json" />
+    <None Remove="appsettings.json" />
+    <None Remove="appsettings.localhost.json" />
+    <None Remove="appsettings.Production.json" />
+    <None Remove="hostsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\NCoreClientCore.WinForms.Framework\Form1.cs" Link="Form1.cs" />
+    <Compile Include="..\NCoreClientCore.WinForms.Framework\Form1.Designer.cs" Link="Form1.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="**\*.json" Exclude="bin\**\*;obj\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />    
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\NCoreClientCore.WinForms.Framework\Form1.resx" Link="Form1.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NCoreClientCore.NetStandard\NCoreClientCore.NetStandard.csproj" />
+  </ItemGroup>
+
+</Project>

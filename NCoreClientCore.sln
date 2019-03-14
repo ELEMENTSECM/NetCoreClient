@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.438
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28705.295
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NCoreClientCore.ConsoleApp", "NCoreClientCore.ConsoleApp\NCoreClientCore.ConsoleApp.csproj", "{FE00F0CA-5232-4B4C-BBA2-8FE13703E49A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NCoreClientCore.NetStandard", "NCoreClientCore.NetStandard\NCoreClientCore.NetStandard.csproj", "{595FF1FA-AECD-4DC3-BA9E-149088E4B232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCoreClientCore.WinForms.Framework", "NCoreClientCore.WinForms.Framework\NCoreClientCore.WinForms.Framework.csproj", "{A66D433F-8DFF-412B-811B-8183A9B58E5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NCoreClientCore.WinForms.NetCore", "NCoreClientCore.Winforms.NetCore\NCoreClientCore.WinForms.NetCore.csproj", "{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3380F92C-9CC8-4202-B174-6B3D3632099C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		nuget.config = nuget.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +31,12 @@ Global
 		{595FF1FA-AECD-4DC3-BA9E-149088E4B232}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{595FF1FA-AECD-4DC3-BA9E-149088E4B232}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{595FF1FA-AECD-4DC3-BA9E-149088E4B232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66D433F-8DFF-412B-811B-8183A9B58E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66D433F-8DFF-412B-811B-8183A9B58E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
