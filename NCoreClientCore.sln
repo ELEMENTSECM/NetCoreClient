@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		nuget.config = nuget.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCoreClientCore.GraphQL", "NCoreClientCore.GraphQL\NCoreClientCore.GraphQL.csproj", "{B94A6950-020B-4B00-AF05-92A5C5E2965C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCF3C384-D7EE-4C8F-B39E-054F38D1578D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94A6950-020B-4B00-AF05-92A5C5E2965C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94A6950-020B-4B00-AF05-92A5C5E2965C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94A6950-020B-4B00-AF05-92A5C5E2965C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94A6950-020B-4B00-AF05-92A5C5E2965C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
