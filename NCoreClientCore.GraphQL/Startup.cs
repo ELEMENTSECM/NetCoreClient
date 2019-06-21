@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+using NCoreClientCore.NetStandard;
+
 namespace NCoreClientCore.GraphQL
 {
     public class Startup
@@ -25,6 +27,9 @@ namespace NCoreClientCore.GraphQL
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<NCoreOptions>(Configuration.GetSection("NCore"));
+            services.AddSingleton<NCoreFactory>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

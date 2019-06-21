@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gecko.NCore.Client;
+using Gecko.NCore.Client.ObjectModel.V3.En;
 using Microsoft.AspNetCore.Mvc;
+using NCoreClientCore.NetStandard;
+using Gecko.NCore.Client.Querying;
 
 namespace NCoreClientCore.GraphQL.Controllers
 {
@@ -10,10 +14,22 @@ namespace NCoreClientCore.GraphQL.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IEphorteContext _context;
+
+        public ValuesController(NCoreFactory factory) 
+            => _context = factory.Create();
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            var query = from c in _context.Query<Case>().Include(x => x.OfficerName)
+                        where c.Id > 10
+                        select c;
+            var caseDetail = query.Take(40);
+
+            return caseDetail.Select(c => $"{c.Title} => {c.OfficerName.FirstName} {c.OfficerName.LastName}").ToArray();
+            
             return new string[] { "value1", "value2" };
         }
 
