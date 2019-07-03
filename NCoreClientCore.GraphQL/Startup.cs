@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Api.GraphQL;
+using GraphiQl;
+using GraphQL.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
 using NCoreClientCore.NetStandard;
 
 namespace NCoreClientCore.GraphQL
 {
-    public class Startup
+	public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -31,6 +26,11 @@ namespace NCoreClientCore.GraphQL
             services.AddSingleton<NCoreFactory>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+			services.AddScoped<DataSchema>();
+
+			services.AddGraphQL(o => {o.ExposeExceptions = true; })
+				.AddGraphTypes(ServiceLifetime.Scoped);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +47,9 @@ namespace NCoreClientCore.GraphQL
             }
 
             app.UseHttpsRedirection();
+            app.UseGraphiQl("/graphql", "/graphql");
+			app.UseGraphQL<DataSchema>("/graphql");
+
             app.UseMvc();
         }
     }
